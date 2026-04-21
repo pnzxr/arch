@@ -373,7 +373,7 @@ grep -q '^GRUB_TIMEOUT_STYLE' /etc/default/grub \
   || echo 'GRUB_TIMEOUT_STYLE=menu' >> /etc/default/grub
 
 # Readable boot (no quiet/splash)
-sed -i 's/^GRUB_CMDLINE_LINUX_DEFAULT=.*/GRUB_CMDLINE_LINUX_DEFAULT=""/' /etc/default/grub
+sed -i 's/^GRUB_CMDLINE_LINUX_DEFAULT=.*/GRUB_CMDLINE_LINUX_DEFAULT="video=eDP-1:d"/' /etc/default/grub
 
 # ── 09_windows: emit the Windows chainloader entry BEFORE 10_linux ────────────
 # grub.cfg entry order = script filename order, so 09 < 10 < 30.
